@@ -33,20 +33,10 @@ public class MainActivity extends Activity {
             	//	Main.Log("getResponseCode == 200");
             	System.out.println("got response 200");
             	
-            	View text_ip = findViewById(R.id.text_ip);
-            	while(text_ip.toString().length() == 0)
-            	if(text_ip.toString().length() != 0) {
-            		System.out.println("length diff 0");
-            		System.out.println("length diff 0");
-            		System.out.println("length diff 0");
-            		System.out.println("length diff 0");
-            	}
+            	View b = findViewById(R.id.button_connect);
+				b.setVisibility(View.GONE);
             	
-            	View v = findViewById(R.id.button_connect);
-				v.setVisibility(View.GONE);
-            	v = findViewById(R.id.text_connected);
-            	v.setVisibility(View.VISIBLE);
-            	
+            	return;
             }
 		} catch (MalformedURLException e1) {
             // TODO Auto-generated catch block

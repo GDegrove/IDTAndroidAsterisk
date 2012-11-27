@@ -14,7 +14,7 @@
         android:text="@string/req_ip" />
 
     <EditText
-        android:id="@+id/text_ip"
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
