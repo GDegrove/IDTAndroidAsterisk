@@ -1,0 +1,75 @@
+package p1;
+import java.io.*;
+import gnu.io.CommPortIdentifier;
+import gnu.io.PortInUseException;
+import gnu.io.SerialPort;
+import gnu.io.UnsupportedCommOperationException;
+
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+public class SerialPortTools {
+	
+    
+    //static SerialPort serialPort;
+    
+    static String errNoSerialPort = "No serial port found.\n";
+    static String serialPortFound = "Serial port found. Name : ";
+    
+    static int serialPortSettings[] = {
+    		//Serial Port Settings : baudrate, ??, stop bits, parity, timeout
+    		9600,
+            SerialPort.DATABITS_8,
+            SerialPort.STOPBITS_1,
+            SerialPort.PARITY_NONE,
+            2000
+    		};
+
+    private static List<CommPortIdentifier> findSerialPorts() {
+    	
+    	List<CommPortIdentifier> serialPortIdentifiers = new ArrayList<CommPortIdentifier>();
+    	Enumeration portList = CommPortIdentifier.getPortIdentifiers();
+
+		while (portList.hasMoreElements()) {
+            CommPortIdentifier portId = (CommPortIdentifier) portList.nextElement();
+                if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
+                	//Serial port found
+                	System.out.println(serialPortFound+portId.getName()+"\n");
+                	serialPortIdentifiers.add(portId);
+                    }
+    		}
+    	return serialPortIdentifiers;
+    }
+    
+    private static Object initSerialPort(CommPortIdentifier portId, int[] serialPortSettings) {
+    	//Returns the initialized serial port or false if the serial port could not be initialized 
+    	
+    			//if (portId.getName().equals("COM2")) {
+                //if (portId.getName().equals("/dev/term/a")) {
+    	SerialPort serialPort = null;
+    	
+		try {
+			serialPort = (SerialPort) portId.open("AppName", serialPortSettings[4]);
+		} catch (PortInUseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if(serialPort != null) {
+			try {
+				serialPort.setSerialPortParams(
+					serialPortSettings[0],
+					serialPortSettings[1],
+					serialPortSettings[2],
+					serialPortSettings[3]);
+				} catch (UnsupportedCommOperationException e) {
+					//TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+        return serialPort;
+    }
+}

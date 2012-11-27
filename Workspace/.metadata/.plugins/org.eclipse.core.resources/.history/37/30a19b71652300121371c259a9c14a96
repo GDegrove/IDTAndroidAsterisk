@@ -1,0 +1,38 @@
+package p1;
+
+import gnu.io.CommPortIdentifier;
+import gnu.io.SerialPort;
+
+import java.util.List;
+
+import p1.SerialPortTools;
+
+public class Server {
+	
+	private static String s = "" 
+	
+	private static SerialPort sp;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+		List<CommPortIdentifier> commPortsList = SerialPortTools.findSerialPorts();
+		if(!commPortsList.isEmpty()) {
+			Object sp = SerialPortTools.initSerialPort(commPortsList.get(0), SerialPortTools.serialPortSettings);
+			if(sp.getClass().getName() != "gnu.io.RXTXPort") {
+				System.out.println("this is a port");
+			}
+			System.out.println(commPortsList.get(0).getName());
+			
+			
+		}
+		
+		String message = "Hello world";
+		byte [] flow = message.getBytes();
+		//commPortList.get(0).
+		
+	}
+
+}

@@ -1,0 +1,73 @@
+package p1;
+import java.io.*;
+import gnu.io.CommPortIdentifier;
+import gnu.io.PortInUseException;
+import gnu.io.SerialPort;
+import gnu.io.UnsupportedCommOperationException;
+
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+public class SerialPortTools {
+	
+    
+    //static SerialPort serialPort;
+    
+    static String errNoSerialPort = "No serial port found.\n";
+    static String serialPortFound = "Serial port found. Name : ";
+    
+    static int serialPortSettings[] = {
+    		//Serial Port Settings : baudrate, ??, stop bits, parity, timeout
+    		9600,
+            SerialPort.DATABITS_8,
+            SerialPort.STOPBITS_1,
+            SerialPort.PARITY_NONE,
+            2000
+    		};
+
+    private static CommPortIdentifier[] findSerialPorts() {
+    	
+    	List<CommPortIdentifier> serialPortNames = new ArrayList<CommPortIdentifier>();
+    	Enumeration portList = null;
+        CommPortIdentifier portId;
+    	if(!portList.hasMoreElements()) {
+    		System.out.println(errNoSerialPort+"\n");
+    	}
+    	else {
+    		while (portList.hasMoreElements()) {
+                portId = (CommPortIdentifier) portList.nextElement();
+                if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
+                	//Serial port found
+                	System.out.println(serialPortFound+portId.getName()+"\n");
+                	serialPortNames.add(portId.getName());
+                    }
+    		}
+    	}
+    	List<String>
+    	return serialPortNames;
+    }
+    
+    private static SerialPort initSerialPort(CommPortIdentifier portId, int[] serialPortSettings) {
+    	
+    			//if (portId.getName().equals("COM2")) {
+                //if (portId.getName().equals("/dev/term/a")) {
+    	try {
+    		SerialPort serialPort = (SerialPort) portId.open("appName", serialPortSettings[5]);
+        	} catch (PortInUseException e) {}
+    	try {
+        	serialPort.setSerialPortParams(
+            serialPortSettings[0],
+            serialPortSettings[1],
+            serialPortSettings[2],
+            serialPortSettings[3]);
+            } catch (UnsupportedCommOperationException e) {}
+        
+        return serialPort;
+        
+    }
+    
+}

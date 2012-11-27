@@ -1,0 +1,189 @@
+package p1;
+import gnu.io.CommPortIdentifier;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.WindowConstants;
+import javax.swing.SwingUtilities;
+
+import p1.Server;
+import p1.Client;
+
+import p1.SerialPortTools;
+
+/**
+* This code was edited or generated using CloudGarden's Jigloo
+* SWT/Swing GUI Builder, which is free for non-commercial
+* use. If Jigloo is being used commercially (ie, by a corporation,
+* company or business for any purpose whatever) then you
+* should purchase a license for each developer using Jigloo.
+* Please visit www.cloudgarden.com for details.
+* Use of Jigloo implies acceptance of these licensing terms.
+* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
+* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+*/
+public class NewJFrame3 extends javax.swing.JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6867662858221544722L;
+	private JMenuBar jMenuBar1;
+	private JPanel jPanel1;
+	private JButton jButton1;
+	private JMenuItem jMenuItem_NoPort;
+	private static JMenu COM_Ports;		//Changed
+	private static JTextPane jTextPane2;		//Changed
+	private JButton jButton2;
+	private JTextPane jTextPane1;
+	private JPanel jPanel2;
+	private JTextField jTextField1;
+	private JMenu jMenu1;
+
+	/**
+	* Auto-generated main method to display this JFrame
+	*/
+	public static void main(String[] args) {
+
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				NewJFrame3 inst = new NewJFrame3();
+				inst.setLocationRelativeTo(null);
+				inst.setVisible(true);
+			}
+		});
+		System.out.println("Here");
+		List<CommPortIdentifier> listCommPortIdentifiers = SerialPortTools.findSerialPorts();
+		if(listCommPortIdentifiers.isEmpty())
+			 jTextPane2.setText("Unable to find COM ports.");
+		else {
+			jTextPane2.setText("COM ports found.");
+			COM_Ports.getItem(0).setVisible(false);
+			List<JMenuItem> jMenuItemsList = new ArrayList<JMenuItem>();
+			for (int i = 0; i< listCommPortIdentifiers.size(); i++) {
+				jMenuItemsList.add(new JMenuItem());
+				jMenuItemsList.get(i).setText(listCommPortIdentifiers.get(i).getName());
+				COM_Ports.add(jMenuItemsList.get(i));
+			}
+		}
+	}
+	
+	public NewJFrame3() {
+		super();
+		initGUI();
+		//List<CommPortIdentifier> listCommPortIdentifiers = SerialPortTools.findSerialPorts();
+		//jTextPane2.setText("Ports série trouvés.");
+	}
+	
+	private void initGUI() {
+		try {
+			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			{
+				jPanel1 = new JPanel();
+				BorderLayout jPanel1Layout = new BorderLayout();
+				jPanel1.setLayout(jPanel1Layout);
+				getContentPane().add(jPanel1, BorderLayout.CENTER);
+				{
+					jTextField1 = new JTextField();
+					jPanel1.add(jTextField1, BorderLayout.NORTH);
+					Dimension min_size = new Dimension(500,10);
+					jTextField1.setMinimumSize(min_size);
+					jTextField1.isEditable();
+				}
+				{
+					jPanel2 = new JPanel();
+					BorderLayout jPanel2Layout = new BorderLayout();
+					jPanel1.add(jPanel2, BorderLayout.CENTER);
+					jPanel2.setLayout(jPanel2Layout);
+					{
+						jTextPane1 = new JTextPane();
+						jPanel2.add(jTextPane1, BorderLayout.CENTER);
+						jTextPane1.setEditable(false);
+					}
+					{
+						jButton1 = new JButton();
+						jPanel2.add(jButton1, BorderLayout.EAST);
+						jButton1.setText("Send data");
+						jButton1.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent evt) {
+								jButton1ActionPerformed(evt);
+							}
+						});
+					}
+					{
+						jButton2 = new JButton();
+						jPanel2.add(jButton2, BorderLayout.WEST);
+						jButton2.setText("Receive data");
+						jButton2.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent evt) {
+								jButton2ActionPerformed(evt);
+							}
+						});
+					}
+					{
+						jTextPane2 = new JTextPane();
+						jPanel2.add(jTextPane2, BorderLayout.SOUTH);
+						jTextPane2.setText("Please wait, searching for COM ports...");
+						jTextPane2.setEditable(false);
+					}
+				}
+			}
+			{
+				jMenuBar1 = new JMenuBar();
+				setJMenuBar(jMenuBar1);
+				{
+					jMenu1 = new JMenu();
+					jMenuBar1.add(jMenu1);
+					jMenu1.setText("jMenu1");
+				}
+				{
+					COM_Ports = new JMenu();
+					jMenuBar1.add(COM_Ports);
+					COM_Ports.setText("COM_Ports");
+					{
+						jMenuItem_NoPort = new JMenuItem();
+						COM_Ports.add(jMenuItem_NoPort);
+						jMenuItem_NoPort.setText("No COM port found.");
+					}
+				}
+			}
+			pack();
+			setSize(400, 300);
+		} catch (Exception e) {
+		    //add your error handling code here
+			e.printStackTrace();
+		}
+	}
+	
+	private void jButton1ActionPerformed(ActionEvent evt) {
+		System.out.println("jButton1.actionPerformed, event="+evt);
+		System.out.println("Bouton 1 cliqué.\n");
+		System.out.println("Starting Client...");
+		Client.main(null);
+		//TODO add your code for jButton1.actionPerformed
+	}
+	
+	private void jButton2ActionPerformed(ActionEvent evt) {
+		System.out.println("jButton2.actionPerformed, event="+evt);
+		System.out.println("Bouton 2 cliqué.\n");
+		System.out.println("Starting Server...");
+		Server.main(null);
+		//TODO add your code for jButton2.actionPerformed
+	}
+
+}

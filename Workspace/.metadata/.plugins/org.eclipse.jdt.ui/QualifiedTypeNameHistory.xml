@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="gnu.io.PortInUseException"/>
+<fullyQualifiedTypeName name="gnu.io.UnsupportedCommOperationException"/>
+<fullyQualifiedTypeName name="java.text.StringCharacterIterator"/>
+<fullyQualifiedTypeName name="java.io.StreamTokenizer"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="javax.swing.JTextPane"/>
+<fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+<fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
+<fullyQualifiedTypeName name="usb.core.Host"/>
+<fullyQualifiedTypeName name="p1.usb.core.Configuration"/>
+<fullyQualifiedTypeName name="p1.usb.core.Descriptor"/>
+<fullyQualifiedTypeName name="p1.usb.core.Endpoint"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="gnu.io.CommPortIdentifier"/>
+<fullyQualifiedTypeName name="gnu.io.SerialPort"/>
+<fullyQualifiedTypeName name="javax.print.attribute.EnumSyntax"/>
+<fullyQualifiedTypeName name="p1.WindowsReqistry"/>
+<fullyQualifiedTypeName name="p1.SerialPortTools"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="java.net.MalformedURLException"/>
+</qualifiedTypeNameHistroy>

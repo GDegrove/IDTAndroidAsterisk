@@ -1,0 +1,8 @@
+Creating elements for NewJFrame3.java
+
+
+>>>  about to create class java.awt.BorderLayout, constructor=public java.awt.BorderLayout()
+<<< created class java.awt.BorderLayout
+
+>>>  about to create class java.awt.BorderLayout, constructor=public java.awt.BorderLayout()
+<<< created class java.awt.BorderLayout

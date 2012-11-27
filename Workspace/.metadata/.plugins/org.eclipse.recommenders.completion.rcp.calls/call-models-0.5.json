@@ -1,0 +1,28 @@
+{
+  "C:\\Program Files\\Java\\jdk1.7.0_07\\jre\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jdk1.7.0_07\\jre\\lib\\rt.jar",
+    "status": "RESOLVED"
+  },
+  "C:\\Program Files\\Java\\jre7\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027C:\\Program Files\\Java\\jre7\\lib\\rt.jar\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre7\\lib\\ext\\RXTXcomm.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\RXTXcomm.jar",
+    "status": "RESOLVED"
+  },
+  "D:\\Dropbox\\Personnel\\EPHEC\\3\\TFE\\Workspace\\projet_test\\src": {
+    "location": "D:\\Dropbox\\Personnel\\EPHEC\\3\\TFE\\Workspace\\projet_test\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Dropbox\\Personnel\\EPHEC\\3\\TFE\\Workspace\\projet_test\\src\u0027. Skipped."
+  },
+  "C:\\Users\\User\\AppData\\Local\\Android\\android-sdk\\platforms\\android-10\\android.jar": {
+    "location": "C:\\Users\\User\\AppData\\Local\\Android\\android-sdk\\platforms\\android-10\\android.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Users\\User\\AppData\\Local\\Android\\android-sdk\\platforms\\android-10\\android.jar\u0027. Neither fingerprint \u0027b50d42b32e1d8a6c2d5f19a846474d5e2199c68e\u0027 nor symbolic name \u0027android\u0027 are known."
+  }
+}

@@ -1,0 +1,65 @@
+package p1;
+
+import gnu.io.CommPortIdentifier;
+import gnu.io.SerialPort;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import p1.SerialPortTools;
+
+public class Client {
+	
+	private static String commPortName = "COM1";		//TOCHANGE
+	private static String portType = "gnu.io.RXTXPort";
+	
+	private static SerialPort sp;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<CommPortIdentifier> commPortsList = SerialPortTools.findSerialPorts();
+		
+		if(commPortsList.isEmpty()) {
+			//If no serial port has been found
+			System.out.println("Impossible to find a port.\n");
+			return;
+		}
+		
+		for(CommPortIdentifier cpi : commPortsList) {
+			if(cpi.getName().compareTo(commPortName) == 0) {
+			//If this port is the chosen one
+				sp = SerialPortTools.initSerialPort(cpi, SerialPortTools.serialPortSettings);
+				if(sp != null)
+					System.out.println("Chosen port "+cpi.getName()+" initialized.\n");
+				else {
+					System.out.println("Impossible to initialize the port "+commPortsList.get(0).getName()+".\n");
+					return;
+				}
+			}
+		}
+
+		String message = "";
+		boolean endOfMessage = false;
+		int receivedByte;
+		System.out.println("Reading...\n");
+		InputStream inputStream = sp.getInputStream();
+			
+		while(endOfMessage == false) try {
+			
+			
+			if((receivedByte = inputStream.read()) == -1) {}
+			else if((char)receivedByte == '!') {
+				System.out.println("This message has been received : "+message+"\n");
+				endOfMessage = true;		//Escape character found, end of message flag
+			}
+			else message = message+(char)receivedByte;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+		
+			
+	}
+}

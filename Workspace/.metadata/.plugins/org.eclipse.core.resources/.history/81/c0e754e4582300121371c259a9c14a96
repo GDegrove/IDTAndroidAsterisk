@@ -1,0 +1,46 @@
+package p1;
+
+import gnu.io.CommPortIdentifier;
+
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+public class Tries {
+
+	/**
+	 * @param args
+	 */
+	
+	static Enumeration portList;
+	
+    private static List<CommPortIdentifier> findSerialPorts() {
+    	
+    	List<CommPortIdentifier> serialPortNames = new ArrayList<CommPortIdentifier>();
+    	Enumeration portList;
+    	boolean isPortPresent; 
+    	if((isPortPresent = portList.hasMoreElements()) == false) {
+    		System.out.println("noserialport"+"\n");
+    	}
+    	else {
+    		while (portList.hasMoreElements()) {
+                CommPortIdentifier portId = (CommPortIdentifier) portList.nextElement();
+                if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
+                	//Serial port found
+                	System.out.println("serial port found : "+portId.getName()+"\n");
+                	serialPortNames.add(portId);
+                    }
+    		}
+    	}
+    	return serialPortNames;
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<CommPortIdentifier> list = findSerialPorts();
+		list.toString();
+		
+	}
+
+}
