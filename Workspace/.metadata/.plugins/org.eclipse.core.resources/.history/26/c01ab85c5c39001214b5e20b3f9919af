@@ -78,7 +78,6 @@ public class MainActivity extends Activity {
             System.out.println("trying to connect...");
             circle.setVisibility(View.VISIBLE);
             urlc.connect();
-            
             if (urlc.getResponseCode() == 200) {
             	//	Main.Log("getResponseCode == 200");
             	System.out.println("got response 200");
