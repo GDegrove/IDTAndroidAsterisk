@@ -5,8 +5,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="connect_button">Connect</string>
+    <string name="disconnect_button">Disconnect</string>
     <string name="req_ip">Please enter the IP address of the server you want to connect to :</string>
-    <string name="connected">You\'re connected !\nIP of the server :</string>
+    <string name="connected">You\'re connected !\nIP of the server :                             </string>
+    <string name="ip">IP : </string>
+    <string name="id">ID : </string>
+    <string name="pwd">PWD : </string>
     <string name="space"> </string>
+    <string name="hintIP">Server IP</string>
+    <string name="hintID">Your ID</string>
+    <string name="hintPWD">Password</string>
+    <string name="reload">Reload</string>
+    <string name="showUsers">Show Users</string>
 
 </resources>

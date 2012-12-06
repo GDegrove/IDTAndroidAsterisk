@@ -125,7 +125,7 @@
       "qualifier": ""
     },
     "jarFileFingerprint": "612846c9857077a039b533718f72db3bc041d389",
-    "jarFileModificationDate": "2012-11-26T16:05:13.208+01:00",
+    "jarFileModificationDate": "2012-11-28T14:55:23.012+01:00",
     "location": "C:\\Users\\User\\Documents\\GitHub\\IDTAndroidAsterisk\\Workspace\\myAndroidApp\\libs\\android-support-v4.jar",
     "javaRuntime": false
   },
@@ -176,9 +176,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "58a896c7e7718bc91efd3ae469fbb378da247feb",
-    "jarFileModificationDate": "2012-10-25T12:05:34.822+02:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\jfr.jar",
+    "jarFileFingerprint": "cf4437b2a4a56b938f2af9da2b4368076ae51344",
+    "jarFileModificationDate": "2012-10-25T12:05:34.766+02:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\jaccess.jar",
     "javaRuntime": true
   },
   {
@@ -189,9 +189,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "cf4437b2a4a56b938f2af9da2b4368076ae51344",
-    "jarFileModificationDate": "2012-10-25T12:05:34.766+02:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\jaccess.jar",
+    "jarFileFingerprint": "58a896c7e7718bc91efd3ae469fbb378da247feb",
+    "jarFileModificationDate": "2012-10-25T12:05:34.822+02:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\jfr.jar",
     "javaRuntime": true
   },
   {
@@ -215,9 +215,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "4f7501841eb130c1f5a5a2abf5ee20c1210d44e2",
-    "jarFileModificationDate": "2008-12-07T19:45:36+01:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\RXTXcomm.jar",
+    "jarFileFingerprint": "1452219d35189d95e8286a8d7a0577839f90a855",
+    "jarFileModificationDate": "2012-10-25T12:05:34.878+02:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\resources.jar",
     "javaRuntime": true
   },
   {
@@ -228,9 +228,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "1452219d35189d95e8286a8d7a0577839f90a855",
-    "jarFileModificationDate": "2012-10-25T12:05:34.878+02:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\resources.jar",
+    "jarFileFingerprint": "4f7501841eb130c1f5a5a2abf5ee20c1210d44e2",
+    "jarFileModificationDate": "2008-12-07T19:45:36+01:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\RXTXcomm.jar",
     "javaRuntime": true
   },
   {

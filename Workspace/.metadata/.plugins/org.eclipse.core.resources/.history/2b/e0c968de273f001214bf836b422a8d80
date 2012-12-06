@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <ProgressBar
+        android:id="@+id/progressCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp" />
+
+    <TextView
+        android:id="@+id/textMainMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/req_ip" />
+
+    <TextView
+        android:id="@+id/text_connected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_disconnect"
+        android:layout_centerHorizontal="true"
+        android:text="@string/connected" />
+
+    <Button
+        android:id="@+id/button_disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressCircle"
+        android:layout_centerHorizontal="true"
+        android:text="@string/disconnect_button" />
+
+    <Button
+        android:id="@+id/button_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressCircle"
+        android:layout_toRightOf="@+id/button_disconnect"
+        android:text="@string/connect_button" />
+
+    <EditText
+        android:id="@+id/TextFieldIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextIP"
+        android:layout_alignBottom="@+id/TextIP"
+        android:layout_alignLeft="@+id/TextFieldID"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/TextFieldID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextFieldIP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/TextIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textMainMessage"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/TextFieldIP"
+        android:text="@string/ip" />
+
+    <TextView
+        android:id="@+id/TextID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextFieldID"
+        android:layout_alignBottom="@+id/TextFieldID"
+        android:layout_alignRight="@+id/TextIP"
+        android:text="@string/id" />
+
+    <EditText
+        android:id="@+id/TextFieldPWD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextFieldID"
+        android:layout_below="@+id/TextFieldID"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/TextPWD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextFieldPWD"
+        android:layout_alignBottom="@+id/TextFieldPWD"
+        android:layout_toLeftOf="@+id/TextFieldPWD"
+        android:text="@string/pwd" />
+
+</RelativeLayout>
